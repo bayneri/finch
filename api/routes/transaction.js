@@ -25,13 +25,8 @@ router.get('/', async (req, res) => {
     try {
         Promise.all([
             Transaction.find({
-                user: email
-            }, 
-            {
-                $sort: {
-                    _id: -1
-                }
-            }),
+                    user: email
+                }),
             Transaction.Transactions.aggregate(
                 [{
                         $match: {
@@ -50,23 +45,18 @@ router.get('/', async (req, res) => {
                                 $sum: 1
                             }
                         }
-                    },
-                    {
-                        $sort: {
-                            _id: -1
-                        }
                     }
                 ]
             )
         ]).then(([transactions, groups]) => {
-            console.log(transactions, groups);
-
-            let ind = transactions.length;
+            transactions.sort((a, b) => (a.createdAt > b.createdAt) ? -1 : ((b.createdAt > a.createdAt) ? 1 : 0)); 
+            groups.sort((a, b) => (a._id > b._id) ? -1 : ((b._id > a._id) ? 1 : 0)); 
+            let ind = 0;
             for (let i in groups) {
-                groups[i].transactions = transactions.slice(ind - groups[i].count, ind).reverse();
+                groups[i].transactions = transactions.slice(ind, ind + groups[i].count);
                 groups[i].date = groups[i]._id;
                 delete groups[i]._id;
-                ind -= groups[i].count;
+                ind += groups[i].count;
             }
 
             const notCompletedTransactions = [];
