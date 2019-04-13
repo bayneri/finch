@@ -35,7 +35,8 @@ router.get('/kuveyt', async (req, res) => {
           console.log(tokenObject);
 
           Token.create(tokenObject).then(token => {
-            return User.findOneAndUpdate({email: tokenObject.state}, {kToken: token._id});
+            const email = Buffer.from(tokenObject.state, 'base64').toString('ascii').split(':')[0];
+            return User.findOneAndUpdate({ email }, {kToken: token._id});
           });
 
         } else {
