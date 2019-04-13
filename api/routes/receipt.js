@@ -31,8 +31,7 @@ router.post('/', async (req, res) => {
                 console.log(receiptUrl);
 
                 Transaction.findOneAndUpdate({ _id: body.transactionId }, { receiptUrl }).then(transaction => {
-                    console.log(transaction);
-                    ocrService(receiptUrl, transaction.totalAmount).then(result => {
+                    ocrService(receiptUrl).then(result => {
                         console.log(result);
                         res.send({ receiptUrl });
                     })
