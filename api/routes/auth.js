@@ -28,7 +28,7 @@ router.get('/kuveyt', async (req, res) => {
         method: 'POST'
       }, (err, res, body) => {
         console.log(body);
-        tokenObject = JSON.parse(body);
+        let tokenObject = JSON.parse(body);
         if (!err && !tokenObject.error) {
           tokenObject.expires_at = Date.now() + tokenObject.expires_in;
           delete tokenObject.expires_in;
@@ -37,7 +37,8 @@ router.get('/kuveyt', async (req, res) => {
           console.log(tokenObject);
 
           Token.create(tokenObject).then(token => {
-            const email = Buffer.from(tokenObject.state, 'base64').toString('ascii').split(':')[0];
+            const email = Buffer.from(token.state, 'base64').toString('ascii').split(':')[0];
+            console.log(email);
             User.findOneAndUpdate({ email }, {kToken: token._id}).then(() => {
               return res.send({token: tokenObject.access_token});
             })
