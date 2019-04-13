@@ -31,6 +31,7 @@ const Users = mongoose.model('User', UserSchema);
 module.exports = {
     create: user => Users.create(user),
     findOne: user => Users.findOne(user),
+    findOneAndUpdate: (query, options) => Users.findOneAndUpdate(query, options),
     find: user => Users.find(user),
     Users,
 };
