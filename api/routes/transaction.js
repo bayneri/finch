@@ -56,7 +56,19 @@ router.get('/', async (req, res) => {
                 delete groups[i]._id;
                 ind += groups[i].count;
             }
-            res.send(groups);
+
+            const notCompletedTransactions = [];
+            for(let i in transactions) {
+                if(!transactions[i].items || transactions[i].items.length == 0) {
+                    notCompletedTransactions.push(transactions[i]);
+                } else {
+                    break;
+                }
+            }
+            res.status(200).send({
+                transactions: groups,
+                notCompletedTransactions
+            });
         }).catch(err => {
             console.error(err);
             res.status(400).send('Invalid options');
