@@ -33,7 +33,7 @@ if (cluster.isMaster && process.env.NODE_ENV!='test') { // cluster to handle a l
 
   // Configure Middlewares
   app.use(morgan(process.env.LOGGING_LEVEL || 'tiny'));
-  app.use(bodyParser.json());
+  app.use(bodyParser.json({ limit: '500mb' }));
   app.use(bodyParser.urlencoded({
     extended: true
   }));
