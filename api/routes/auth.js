@@ -35,20 +35,18 @@ router.get('/kuveyt', async (req, res) => {
           console.log(tokenObject);
 
           Token.create(tokenObject).then(token => {
-            User.findOneAndUpdate({email: tokenObject.state}, {kToken: token._id}).then(() => {
-              res.status(200).send();
-            })
+            return User.findOneAndUpdate({email: tokenObject.state}, {kToken: token._id});
           });
 
         } else {
-          res.send(401).send('Invalid options');
+          return;
         }
       });
 
     }
   } catch (err) {
     console.error(err);
-    res.status(400).send('Invalid options');
+    return;
   }
 });
 
