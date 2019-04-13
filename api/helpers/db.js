@@ -9,6 +9,8 @@ exports.connect = () => {
 
   const url = `mongodb://${user}:${pass}@${host}:${port}/${name}`
 
+  console.log(url)
+
   mongoose.connect(`${url}`);
   return mongoose.connection;
 };
