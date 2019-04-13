@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     name: {
         type: String,
@@ -12,7 +13,8 @@ const UserSchema = new Schema({
     },
     token: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     kToken: {
         type: String
