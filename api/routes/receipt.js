@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Transaction = require('../models/transactions');
 
 const AWS = require('aws-sdk');
 AWS.config.loadFromPath('./config/s3_config.json');
@@ -25,10 +26,14 @@ router.post('/', async (req, res) => {
                 console.error('Error uploading data: ', data);
                 res.status(500).send('An error occured');
             } else {
-                const imageUrl = `${process.env.S3_BASE_URL}/${encodeURI(body.transactionId)}`;
-                console.log(imageUrl);
+                const receiptUrl = `${process.env.S3_BASE_URL}/${encodeURI(body.transactionId)}`;
+                console.log(receiptUrl);
 
-                res.send({imageUrl});
+                Transaction.findOneAndUpdate({_id: body.transactionId}, { receiptUrl }).then(() => {
+
+                    res.send({receiptUrl});
+                })
+
             }
         });
     } catch (err) {
