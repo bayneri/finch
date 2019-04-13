@@ -41,11 +41,12 @@ router.post('/login', async (req, res) => {
                     kt: (userResult.kToken) ? true : false
                 });
             } else {
-                throw new Error;
+                console.error(err);
+                res.status(401).send('Unauthorized');
             }
         }).catch(err => {
             console.error(err);
-            res.status(400).send('Invalid options');
+            res.status(500).send('An error occured');
         })
     } catch (err) {
         console.error(err);
