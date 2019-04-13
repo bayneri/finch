@@ -32,6 +32,8 @@ router.get('/kuveyt', async (req, res) => {
         if (!err && !tokenObject.error) {
           tokenObject.expires_at = Date.now() + tokenObject.expires_in;
           delete tokenObject.expires_in;
+          tokenObject.state = config.state;
+          tokenObject.scope = config.scope;
           console.log(tokenObject);
 
           Token.create(tokenObject).then(token => {
