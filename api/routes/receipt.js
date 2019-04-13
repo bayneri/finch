@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const Transaction = require('../models/transactions');
+const ocrService = require('../services/ocr');
 
 const AWS = require('aws-sdk');
 AWS.config.loadFromPath('./config/s3_config.json');
-const s3Bucket = new AWS.S3( { params: {Bucket: 'finch-img'} } );
+const s3Bucket = new AWS.S3({ params: { Bucket: 'finch-img' } });
 
 // Upload Receipt
 router.post('/', async (req, res) => {
@@ -29,9 +30,11 @@ router.post('/', async (req, res) => {
                 const receiptUrl = `${process.env.S3_BASE_URL}/${encodeURI(body.transactionId)}`;
                 console.log(receiptUrl);
 
-                Transaction.findOneAndUpdate({_id: body.transactionId}, { receiptUrl }).then(() => {
-
-                    res.send({receiptUrl});
+                Transaction.findOneAndUpdate({ _id: body.transactionId }, { receiptUrl }).then(transaction => {
+                    ocrService(receiptUrl).then(result => {
+                        console.log(result);
+                        res.send({ receiptUrl });
+                    })
                 })
 
             }
