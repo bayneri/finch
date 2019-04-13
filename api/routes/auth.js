@@ -5,6 +5,7 @@ const Token = require("../models/tokens");
 const User = require('../models/users');
 const kuveytConfig = require('../config/kuveyt');
 
+// Auth Kuveyt
 router.get('/kuveyt', async (req, res) => {
   const config = { ...req.query };
   console.log(config);
@@ -32,8 +33,9 @@ router.get('/kuveyt', async (req, res) => {
           tokenObject.expires_at = Date.now() + tokenObject.expires_in;
           delete tokenObject.expires_in;
           console.log(tokenObject);
-          Token.create(tokenObject, token => {
-            User.findOneAndUpdate({_id: userId}, {kToken: token._id}, () => {
+
+          Token.create(tokenObject).then(token => {
+            User.findOneAndUpdate({email: tokenObject.state}, {kToken: token._id}).then(() => {
               res.status(200).send();
             })
           });
