@@ -36,18 +36,20 @@ router.get('/kuveyt', async (req, res) => {
 
           Token.create(tokenObject).then(token => {
             const email = Buffer.from(tokenObject.state, 'base64').toString('ascii').split(':')[0];
-            return User.findOneAndUpdate({ email }, {kToken: token._id});
+            User.findOneAndUpdate({ email }, {kToken: token._id}).then(() => {
+              return res.send({token: tokenObject.access_token});
+            })
           });
 
         } else {
-          return;
+          return res.status(400).send();
         }
       });
 
     }
   } catch (err) {
     console.error(err);
-    return;
+    return res.status(400).send();
   }
 });
 
