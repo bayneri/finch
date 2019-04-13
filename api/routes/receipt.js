@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
                 const imageUrl = `${process.env.S3_BASE_URL}/${encodeURI(body.transactionId)}`;
                 console.log(imageUrl);
 
-                res.send(imageUrl);
+                res.send({imageUrl});
             }
         });
     } catch (err) {
