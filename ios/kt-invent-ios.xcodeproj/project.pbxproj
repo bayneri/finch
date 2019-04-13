@@ -1,0 +1,678 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F2435152261CFC000B532F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435142261CFC000B532F7 /* AppDelegate.swift */; };
+		4F24351C2261CFC000B532F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F24351A2261CFC000B532F7 /* Main.storyboard */; };
+		4F24351E2261CFC100B532F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F24351D2261CFC100B532F7 /* Assets.xcassets */; };
+		4F2435212261CFC100B532F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F24351F2261CFC100B532F7 /* LaunchScreen.storyboard */; };
+		4F2435322261D35E00B532F7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435312261D35E00B532F7 /* APIClient.swift */; };
+		4F2435352261D37800B532F7 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435342261D37800B532F7 /* UserAPI.swift */; };
+		4F2435382261D3A800B532F7 /* Base64Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435372261D3A800B532F7 /* Base64Media.swift */; };
+		4F24353A2261D3C000B532F7 /* MultipartMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435392261D3C000B532F7 /* MultipartMedia.swift */; };
+		4F24353C2261D3D900B532F7 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24353B2261D3D900B532F7 /* Media.swift */; };
+		4F24353F2261D55800B532F7 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24353E2261D55800B532F7 /* SessionManager.swift */; };
+		4F2435412261D5D900B532F7 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435402261D5D900B532F7 /* UserDataManager.swift */; };
+		4F2435432261D78C00B532F7 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435422261D78C00B532F7 /* Session.swift */; };
+		4F2435452261D79300B532F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435442261D79300B532F7 /* User.swift */; };
+		4F2435472261D7DA00B532F7 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435462261D7DA00B532F7 /* Contants.swift */; };
+		4F2435492261D81B00B532F7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435482261D81B00B532F7 /* StringExtension.swift */; };
+		4F24354B2261D84700B532F7 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24354A2261D84700B532F7 /* UIViewExtension.swift */; };
+		4F24354D2261D85D00B532F7 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24354C2261D85D00B532F7 /* DictionaryExtension.swift */; };
+		4F24354F2261D88A00B532F7 /* JSONExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24354E2261D88A00B532F7 /* JSONExtension.swift */; };
+		4F2435512261D8D100B532F7 /* StoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435502261D8D100B532F7 /* StoryboardExtension.swift */; };
+		4F2435542261DA1F00B532F7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435532261DA1F00B532F7 /* SignInViewController.swift */; };
+		4F2435582261DB0800B532F7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435572261DB0800B532F7 /* SignUpViewController.swift */; };
+		4F24355A2261DB2400B532F7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435592261DB2400B532F7 /* HomeViewController.swift */; };
+		4F24355C2261DC3F00B532F7 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24355B2261DC3F00B532F7 /* UIApplicationExtension.swift */; };
+		4F24355E2261DC6200B532F7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24355D2261DC6200B532F7 /* UIViewControllerExtension.swift */; };
+		4F2435602261E2EA00B532F7 /* KTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24355F2261E2EA00B532F7 /* KTTextField.swift */; };
+		4F2435622261E3A100B532F7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435612261E3A100B532F7 /* UIColorExtension.swift */; };
+		4F2435642261E51600B532F7 /* KTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2435632261E51600B532F7 /* KTButton.swift */; };
+		4F24356722621CD400B532F7 /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F24356622621CD400B532F7 /* Walkthrough.storyboard */; };
+		4F24356922621D2C00B532F7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24356822621D2C00B532F7 /* AccountViewController.swift */; };
+		4F24356B226232B900B532F7 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24356A226232B900B532F7 /* AccountManager.swift */; };
+		4F24356D2262355100B532F7 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24356C2262355100B532F7 /* Transaction.swift */; };
+		4F2435702262395000B532F7 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24356F2262395000B532F7 /* TransactionTableViewCell.swift */; };
+		4F24357222624A0500B532F7 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F24357122624A0500B532F7 /* TransactionDetailViewController.swift */; };
+		4F2B6ED122625FEB001A3FC7 /* TransactionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B6ED022625FEB001A3FC7 /* TransactionAPI.swift */; };
+		4F2B6ED322628168001A3FC7 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B6ED222628168001A3FC7 /* UIImageViewExtension.swift */; };
+		4F2B6ED522628462001A3FC7 /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B6ED422628462001A3FC7 /* BillViewController.swift */; };
+		4F2B6ED72262955C001A3FC7 /* NotCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B6ED62262955C001A3FC7 /* NotCompletedViewController.swift */; };
+		4F379D9E22625C1E006F2B70 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F379D9D22625C1E006F2B70 /* ProfileViewController.swift */; };
+		5FC61139A8EAEBE12D794BF9 /* Pods_kt_invent_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A717DB1FD467397A2AB372 /* Pods_kt_invent_ios.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0C78E5AC0E54B626F07F7548 /* Pods-kt-invent-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kt-invent-ios.debug.xcconfig"; path = "Target Support Files/Pods-kt-invent-ios/Pods-kt-invent-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		4F2435112261CFC000B532F7 /* kt-invent-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kt-invent-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F2435142261CFC000B532F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4F24351B2261CFC000B532F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4F24351D2261CFC100B532F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F2435202261CFC100B532F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4F2435222261CFC100B532F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F2435312261D35E00B532F7 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		4F2435342261D37800B532F7 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		4F2435372261D3A800B532F7 /* Base64Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Media.swift; sourceTree = "<group>"; };
+		4F2435392261D3C000B532F7 /* MultipartMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartMedia.swift; sourceTree = "<group>"; };
+		4F24353B2261D3D900B532F7 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		4F24353E2261D55800B532F7 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		4F2435402261D5D900B532F7 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
+		4F2435422261D78C00B532F7 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		4F2435442261D79300B532F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4F2435462261D7DA00B532F7 /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
+		4F2435482261D81B00B532F7 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		4F24354A2261D84700B532F7 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		4F24354C2261D85D00B532F7 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
+		4F24354E2261D88A00B532F7 /* JSONExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExtension.swift; sourceTree = "<group>"; };
+		4F2435502261D8D100B532F7 /* StoryboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardExtension.swift; sourceTree = "<group>"; };
+		4F2435532261DA1F00B532F7 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		4F2435572261DB0800B532F7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		4F2435592261DB2400B532F7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4F24355B2261DC3F00B532F7 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		4F24355D2261DC6200B532F7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		4F24355F2261E2EA00B532F7 /* KTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KTTextField.swift; sourceTree = "<group>"; };
+		4F2435612261E3A100B532F7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		4F2435632261E51600B532F7 /* KTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KTButton.swift; sourceTree = "<group>"; };
+		4F24356622621CD400B532F7 /* Walkthrough.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
+		4F24356822621D2C00B532F7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		4F24356A226232B900B532F7 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		4F24356C2262355100B532F7 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		4F24356F2262395000B532F7 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		4F24357122624A0500B532F7 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
+		4F2B6ED022625FEB001A3FC7 /* TransactionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionAPI.swift; sourceTree = "<group>"; };
+		4F2B6ED222628168001A3FC7 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		4F2B6ED422628462001A3FC7 /* BillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
+		4F2B6ED62262955C001A3FC7 /* NotCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotCompletedViewController.swift; sourceTree = "<group>"; };
+		4F379D9D22625C1E006F2B70 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		50A717DB1FD467397A2AB372 /* Pods_kt_invent_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kt_invent_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9193E04C0DDFB395F3623C2 /* Pods-kt-invent-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kt-invent-ios.release.xcconfig"; path = "Target Support Files/Pods-kt-invent-ios/Pods-kt-invent-ios.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F24350E2261CFC000B532F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC61139A8EAEBE12D794BF9 /* Pods_kt_invent_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		46544D53359E7C818565823D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50A717DB1FD467397A2AB372 /* Pods_kt_invent_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F2435082261CFBF00B532F7 = {
+			isa = PBXGroup;
+			children = (
+				4F2435132261CFC000B532F7 /* kt-invent-ios */,
+				4F2435122261CFC000B532F7 /* Products */,
+				9C00463483A240F27DBEB360 /* Pods */,
+				46544D53359E7C818565823D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4F2435122261CFC000B532F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F2435112261CFC000B532F7 /* kt-invent-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F2435132261CFC000B532F7 /* kt-invent-ios */ = {
+			isa = PBXGroup;
+			children = (
+				4F2435142261CFC000B532F7 /* AppDelegate.swift */,
+				4F2435462261D7DA00B532F7 /* Contants.swift */,
+				4F2435282261D14800B532F7 /* Networking */,
+				4F24353D2261D53A00B532F7 /* Managers */,
+				4F24352A2261D17000B532F7 /* Utility */,
+				4F2435292261D15300B532F7 /* Storyboards */,
+				4F24352D2261D1A400B532F7 /* View Controllers */,
+				4F24352E2261D1B100B532F7 /* Models */,
+				4F24352F2261D1D900B532F7 /* Resources */,
+				4F2435222261CFC100B532F7 /* Info.plist */,
+			);
+			path = "kt-invent-ios";
+			sourceTree = "<group>";
+		};
+		4F2435282261D14800B532F7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4F2435362261D39800B532F7 /* Models */,
+				4F2435332261D36E00B532F7 /* Services */,
+				4F2435312261D35E00B532F7 /* APIClient.swift */,
+				4F24353B2261D3D900B532F7 /* Media.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		4F2435292261D15300B532F7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4F24356622621CD400B532F7 /* Walkthrough.storyboard */,
+				4F24351A2261CFC000B532F7 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4F24352A2261D17000B532F7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				4F24356E2262393800B532F7 /* Cells */,
+				4F24352C2261D19000B532F7 /* Subclasses */,
+				4F24352B2261D17500B532F7 /* Extensions */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		4F24352B2261D17500B532F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F2435482261D81B00B532F7 /* StringExtension.swift */,
+				4F24354A2261D84700B532F7 /* UIViewExtension.swift */,
+				4F24354C2261D85D00B532F7 /* DictionaryExtension.swift */,
+				4F24354E2261D88A00B532F7 /* JSONExtension.swift */,
+				4F2435502261D8D100B532F7 /* StoryboardExtension.swift */,
+				4F24355B2261DC3F00B532F7 /* UIApplicationExtension.swift */,
+				4F24355D2261DC6200B532F7 /* UIViewControllerExtension.swift */,
+				4F2435612261E3A100B532F7 /* UIColorExtension.swift */,
+				4F2B6ED222628168001A3FC7 /* UIImageViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4F24352C2261D19000B532F7 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				4F24355F2261E2EA00B532F7 /* KTTextField.swift */,
+				4F2435632261E51600B532F7 /* KTButton.swift */,
+			);
+			path = Subclasses;
+			sourceTree = "<group>";
+		};
+		4F24352D2261D1A400B532F7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4F379D9D22625C1E006F2B70 /* ProfileViewController.swift */,
+				4F24357322624A0B00B532F7 /* Transactions */,
+				4F2435522261DA1300B532F7 /* Auth */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4F24352E2261D1B100B532F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F2435422261D78C00B532F7 /* Session.swift */,
+				4F2435442261D79300B532F7 /* User.swift */,
+				4F24356C2262355100B532F7 /* Transaction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4F24352F2261D1D900B532F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4F24351D2261CFC100B532F7 /* Assets.xcassets */,
+				4F24351F2261CFC100B532F7 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4F2435332261D36E00B532F7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4F2435342261D37800B532F7 /* UserAPI.swift */,
+				4F2B6ED022625FEB001A3FC7 /* TransactionAPI.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4F2435362261D39800B532F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F2435372261D3A800B532F7 /* Base64Media.swift */,
+				4F2435392261D3C000B532F7 /* MultipartMedia.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4F24353D2261D53A00B532F7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4F24353E2261D55800B532F7 /* SessionManager.swift */,
+				4F2435402261D5D900B532F7 /* UserDataManager.swift */,
+				4F24356A226232B900B532F7 /* AccountManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		4F2435522261DA1300B532F7 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				4F2435532261DA1F00B532F7 /* SignInViewController.swift */,
+				4F2435572261DB0800B532F7 /* SignUpViewController.swift */,
+				4F24356822621D2C00B532F7 /* AccountViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		4F24356E2262393800B532F7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4F24356F2262395000B532F7 /* TransactionTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4F24357322624A0B00B532F7 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				4F2435592261DB2400B532F7 /* HomeViewController.swift */,
+				4F2B6ED62262955C001A3FC7 /* NotCompletedViewController.swift */,
+				4F24357122624A0500B532F7 /* TransactionDetailViewController.swift */,
+				4F2B6ED422628462001A3FC7 /* BillViewController.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		9C00463483A240F27DBEB360 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C78E5AC0E54B626F07F7548 /* Pods-kt-invent-ios.debug.xcconfig */,
+				D9193E04C0DDFB395F3623C2 /* Pods-kt-invent-ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F2435102261CFC000B532F7 /* kt-invent-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F2435252261CFC100B532F7 /* Build configuration list for PBXNativeTarget "kt-invent-ios" */;
+			buildPhases = (
+				855D9B42B895DE0C505C8DD6 /* [CP] Check Pods Manifest.lock */,
+				4F24350D2261CFC000B532F7 /* Sources */,
+				4F24350E2261CFC000B532F7 /* Frameworks */,
+				4F24350F2261CFC000B532F7 /* Resources */,
+				34FB02191DB5F9F361BF912A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "kt-invent-ios";
+			productName = "kt-invent-ios";
+			productReference = 4F2435112261CFC000B532F7 /* kt-invent-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F2435092261CFC000B532F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = EnesCakir;
+				TargetAttributes = {
+					4F2435102261CFC000B532F7 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 4F24350C2261CFC000B532F7 /* Build configuration list for PBXProject "kt-invent-ios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F2435082261CFBF00B532F7;
+			productRefGroup = 4F2435122261CFC000B532F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F2435102261CFC000B532F7 /* kt-invent-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F24350F2261CFC000B532F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2435212261CFC100B532F7 /* LaunchScreen.storyboard in Resources */,
+				4F24356722621CD400B532F7 /* Walkthrough.storyboard in Resources */,
+				4F24351E2261CFC100B532F7 /* Assets.xcassets in Resources */,
+				4F24351C2261CFC000B532F7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34FB02191DB5F9F361BF912A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kt-invent-ios/Pods-kt-invent-ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BWWalkthrough/BWWalkthrough.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BWWalkthrough.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kt-invent-ios/Pods-kt-invent-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		855D9B42B895DE0C505C8DD6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kt-invent-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F24350D2261CFC000B532F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F24354B2261D84700B532F7 /* UIViewExtension.swift in Sources */,
+				4F2435382261D3A800B532F7 /* Base64Media.swift in Sources */,
+				4F2435412261D5D900B532F7 /* UserDataManager.swift in Sources */,
+				4F2435512261D8D100B532F7 /* StoryboardExtension.swift in Sources */,
+				4F24353F2261D55800B532F7 /* SessionManager.swift in Sources */,
+				4F2435152261CFC000B532F7 /* AppDelegate.swift in Sources */,
+				4F2B6ED522628462001A3FC7 /* BillViewController.swift in Sources */,
+				4F2435602261E2EA00B532F7 /* KTTextField.swift in Sources */,
+				4F2B6ED122625FEB001A3FC7 /* TransactionAPI.swift in Sources */,
+				4F24355A2261DB2400B532F7 /* HomeViewController.swift in Sources */,
+				4F2435642261E51600B532F7 /* KTButton.swift in Sources */,
+				4F24354D2261D85D00B532F7 /* DictionaryExtension.swift in Sources */,
+				4F2435352261D37800B532F7 /* UserAPI.swift in Sources */,
+				4F2435622261E3A100B532F7 /* UIColorExtension.swift in Sources */,
+				4F379D9E22625C1E006F2B70 /* ProfileViewController.swift in Sources */,
+				4F2B6ED322628168001A3FC7 /* UIImageViewExtension.swift in Sources */,
+				4F2435472261D7DA00B532F7 /* Contants.swift in Sources */,
+				4F2435542261DA1F00B532F7 /* SignInViewController.swift in Sources */,
+				4F24355C2261DC3F00B532F7 /* UIApplicationExtension.swift in Sources */,
+				4F24354F2261D88A00B532F7 /* JSONExtension.swift in Sources */,
+				4F2435492261D81B00B532F7 /* StringExtension.swift in Sources */,
+				4F2B6ED72262955C001A3FC7 /* NotCompletedViewController.swift in Sources */,
+				4F24357222624A0500B532F7 /* TransactionDetailViewController.swift in Sources */,
+				4F24356D2262355100B532F7 /* Transaction.swift in Sources */,
+				4F2435582261DB0800B532F7 /* SignUpViewController.swift in Sources */,
+				4F2435432261D78C00B532F7 /* Session.swift in Sources */,
+				4F2435452261D79300B532F7 /* User.swift in Sources */,
+				4F2435322261D35E00B532F7 /* APIClient.swift in Sources */,
+				4F2435702262395000B532F7 /* TransactionTableViewCell.swift in Sources */,
+				4F24356B226232B900B532F7 /* AccountManager.swift in Sources */,
+				4F24356922621D2C00B532F7 /* AccountViewController.swift in Sources */,
+				4F24353C2261D3D900B532F7 /* Media.swift in Sources */,
+				4F24355E2261DC6200B532F7 /* UIViewControllerExtension.swift in Sources */,
+				4F24353A2261D3C000B532F7 /* MultipartMedia.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4F24351A2261CFC000B532F7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F24351B2261CFC000B532F7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4F24351F2261CFC100B532F7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F2435202261CFC100B532F7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F2435232261CFC100B532F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4F2435242261CFC100B532F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F2435262261CFC100B532F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C78E5AC0E54B626F07F7548 /* Pods-kt-invent-ios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L86ALW77U2;
+				INFOPLIST_FILE = "kt-invent-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EnesCakir.kt-invent-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F2435272261CFC100B532F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9193E04C0DDFB395F3623C2 /* Pods-kt-invent-ios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L86ALW77U2;
+				INFOPLIST_FILE = "kt-invent-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EnesCakir.kt-invent-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F24350C2261CFC000B532F7 /* Build configuration list for PBXProject "kt-invent-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F2435232261CFC100B532F7 /* Debug */,
+				4F2435242261CFC100B532F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F2435252261CFC100B532F7 /* Build configuration list for PBXNativeTarget "kt-invent-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F2435262261CFC100B532F7 /* Debug */,
+				4F2435272261CFC100B532F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F2435092261CFC000B532F7 /* Project object */;
+}
