@@ -41,19 +41,19 @@ router.get('/kuveyt', async (req, res) => {
             const email = Buffer.from(token.state, 'base64').toString('ascii').split(':')[0];
             console.log(email);
             User.findOneAndUpdate({ email }, {kToken: token._id}).then(() => {
-              return res.send({token: tokenObject.access_token});
+              return res.redirect(`KTInventOAuth://?token=${tokenObject.access_token}`)
             })
           });
 
         } else {
-          return res.send();
+          return res.redirect(`KTInventOAuth://`)
         }
       });
 
     }
   } catch (err) {
     console.error(err);
-    return res.send();
+    return res.redirect(`KTInventOAuth://`)
   }
 });
 
