@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "gcloud-deeplearning",
+    "private_key_id": "ed5eee5fba252fe4a4c06e7387f54f6bf00f381d",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCp0lfK4shnYgjD\nCQYL7Nqa32btPQdmuEOjO4SiPn7XAEjgQyqqF/5gjktR+v0kPrAZ1nBwi8kUE8wL\nwvBLmgtIttwoaEyLI+rmgi5wwEVXAXdiVWqDgujWFDbobGLIcD5IzbyWO5/VBfDy\nz3P4oXnk0Rux9NO3OwxjtqezQetzYWvz3Rnw3J2ob8HgfsOl5TajcjxBKFkXaU5c\nyOvIGazhsTdzmluf+i7jMejuZfN/drf06zGykgbAYmRfGbesY3f+uAf8q0H9jZuB\nWubKyG+VQIQVHdBih/ufHWTdf8ZDvV+bl9Sb4bkVH7d1CfjoZmORmE8Q0JbrYNCs\ndPw65sS5AgMBAAECggEAEhe3I0Y0mDEdYlwWgRQ/uRLWli1zmanFiQFJEPkMDe95\nlC0LwVnzj8lxNF+Dc0ZbgDE0wwTdjC5Mxa8D52YW0C0tOP/dsdBGkT7q4DfX21xs\nYfVcNv0uPcqjC/GqN5UfyaVjs3TQQ0OSB2h7QFDB2hM+OmAtYz7fA8ucw9Ag2+an\nTVI0Sl0Z8sujgtpaGPbJIaeXFoxMtqHQsYOH1nNYpTuAQBnl1Z1fJPnWZSYHRW19\nLIvWPYJY962jwI7XFDGeNSU1FGVyn+9moivJ2dcgrqKXVIZL8p0v3ExH8oF8mwLt\njZluLMg7b3XU2GNrtz4cOXIIscbJpTxa5/cQIypvdQKBgQDnOuc5U24RAfIKozCb\nX2ypWDdXuv8/vF7zlvVMqJKYrI6+EDxY2inY13xYTEJB7WracXnZW9G877m5hDOe\n08JGC3meyJHJrVKcn33KubMJRapZC8fhX9P73jJUdK1ecZuKoWkhq7wUVbheQK1g\nimO3+5A6qcW8q9Z53ijFm8ri/QKBgQC8A2qc3adLYeEvKOzHS6du2v4AplZxfXxQ\nXch/1wa2nmk/CsyHYyt7xRNwkiNiir/wUiywjMXcuB4GBeTDUOsYiDbgmOqaWfbC\nu1BfXmHRDLW6b5Qw2EJXIBpcgUw8vX9/eZLPayQkOQTWncC/1JlAjS1C7WsGr0G9\nBgwMAlRLbQKBgQCQdOUllDCsIWoEKUVhm/D3ruwMO//g4p7zUTj4ZkwHY65doSkC\nXXFNTfoZ87JlG5zo0YHNQCa9AYsnEidpr2OsfNjDUQx7UXPN83oT34WxYjt1G/4I\nl+SIcp1A1A/Hc/Q3XHWgmniKv67J+2AVcv+vXlMRwySMpVH9msQgCB9tRQKBgCp5\nBxuawxE3clxp/VtkTtWvKRRSf1KyC2RIW2Pt2nlkvdfdA6lOEOOr+KFEkjPPrl6G\n4cuccZJUEYxAxpYM8J8hHmyMfusRiboiAJ0awDQuj9snG64RHKN8ABiHqQZLtMLC\nXxT2WjrImrw09Pcg+uHnQqNM6RGgg9REynHoEMzdAoGALDgR9UtOKd7z0DKUIA6o\nKlBnfolfQ+1flkOFobREDDVeIQEqTmVguSvymyn6dYNkfTBe019UfseYoBl4F468\ncrdcJIk/9HtZGzSx0z8MfEG4nHZAwmoZSip4SpC7xgwMTS337xPmw9EW08u5mvY0\n+dNju5pGw05ICb4BgN3GLeI=\n-----END PRIVATE KEY-----\n",
+    "client_email": "receipt-ocr@gcloud-deeplearning.iam.gserviceaccount.com",
+    "client_id": "118181504098652867289",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/receipt-ocr%40gcloud-deeplearning.iam.gserviceaccount.com"
+}
