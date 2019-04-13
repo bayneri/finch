@@ -25,6 +25,9 @@ const TransactionSchema = new Schema({
     },
     items: {
         type: [Object]
+    },
+    receiptUrl: {
+        type: String
     }
 });
 
