@@ -24,7 +24,14 @@ router.get('/', async (req, res) => {
     const email = Buffer.from(req.headers.token, 'base64').toString('ascii').split(':')[0];
     try {
         Promise.all([
-            Transaction.find({user: email}),
+            Transaction.find({
+                user: email
+            }, 
+            {
+                $sort: {
+                    _id: -1
+                }
+            }),
             Transaction.Transactions.aggregate(
                 [{
                         $match: {
@@ -33,7 +40,12 @@ router.get('/', async (req, res) => {
                     },
                     {
                         $group: {
-                            _id: { $dateToString: { format: "%Y-%m-%d", date: "$createdAt" } },
+                            _id: {
+                                $dateToString: {
+                                    format: "%Y-%m-%d",
+                                    date: "$createdAt"
+                                }
+                            },
                             count: {
                                 $sum: 1
                             }
@@ -41,26 +53,26 @@ router.get('/', async (req, res) => {
                     },
                     {
                         $sort: {
-                            _id: 1
+                            _id: -1
                         }
                     }
                 ]
             )
         ]).then(([transactions, groups]) => {
             console.log(transactions, groups);
-            
-            let ind = 0;
-            for(let i in groups) {
-                groups[i].transactions = transactions.slice(ind, ind + groups[i].count);
+
+            let ind = transactions.length;
+            for (let i in groups) {
+                groups[i].transactions = transactions.slice(ind - groups[i].count, ind).reverse();
                 groups[i].date = groups[i]._id;
                 delete groups[i]._id;
-                ind += groups[i].count;
+                ind -= groups[i].count;
             }
 
             const notCompletedTransactions = [];
-            for(let i in transactions) {
-                if(!transactions[i].items || transactions[i].items.length == 0) {
-                    notCompletedTransactions.push(transactions[i]);
+            for (let i in transactions) {
+                if (!transactions[i].items || transactions[i].items.length == 0) {
+                    notCompletedTransactions.unshift(transactions[i]);
                 } else {
                     break;
                 }
