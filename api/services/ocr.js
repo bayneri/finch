@@ -155,7 +155,6 @@ const ocrService = (fileName, totalPrice) => {
             });
 
             res = []
-
             if (!totalPrice) {
                 totalPrice = 0;
                 for (let k = 0; k < products.length; k++) {
