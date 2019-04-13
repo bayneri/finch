@@ -8,6 +8,7 @@ const kuveytConfig = require('../config/kuveyt');
 // Auth Kuveyt
 router.get('/kuveyt', async (req, res) => {
   const config = { ...req.query };
+  console.log(res);
   console.log(config);
   try {
     if (config.code) {
@@ -26,7 +27,7 @@ router.get('/kuveyt', async (req, res) => {
         },
         form,
         method: 'POST'
-      }, (err, res, body) => {
+      }, (err, response, body) => {
         console.log(body);
         let tokenObject = JSON.parse(body);
         if (!err && !tokenObject.error) {
@@ -45,14 +46,14 @@ router.get('/kuveyt', async (req, res) => {
           });
 
         } else {
-          return res.status(400).send();
+          return res.send();
         }
       });
 
     }
   } catch (err) {
     console.error(err);
-    return res.status(400).send();
+    return res.send();
   }
 });
 
