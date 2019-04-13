@@ -1,20 +1,45 @@
 const express = require('express');
 const router = express.Router();
 const request = require('request');
+const Token = require("../models/tokens");
+const User = require('../models/users');
 const kuveytConfig = require('../config/kuveyt');
 
 router.get('/kuveyt', async (req, res) => {
-  const config = {...req.query};
+  const config = { ...req.query };
+  console.log(config);
   try {
-    if(config.code) {
+    if (config.code) {
       const form = {
         'grant_type': 'authorization_code',
         'code': config.code,
-        'redirect_uri': kuveytConfig.redirect_uri
+        'redirect_uri': kuveytConfig.redirect_uri,
+        client_id: kuveytConfig.client_id,
+        client_secret: kuveytConfig.client_secret
       };
-      request.post(kuveytConfig.host, {form}, (err, res, body) => {
-        if(!err) {
-          // save token
+      request({
+        url: kuveytConfig.host,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Authorization': `Basic ${new Buffer(kuveytConfig.client_id + ":" + kuveytConfig.client_secret).toString("base64")}`
+        },
+        form,
+        method: 'POST'
+      }, (err, res, body) => {
+        console.log(body);
+        tokenObject = JSON.parse(body);
+        if (!err && !tokenObject.error) {
+          tokenObject.expires_at = Date.now() + tokenObject.expires_in;
+          delete tokenObject.expires_in;
+          console.log(tokenObject);
+          Token.create(tokenObject, token => {
+            User.findOneAndUpdate({_id: userId}, {kToken: token._id}, () => {
+              res.status(200).send();
+            })
+          });
+
+        } else {
+          res.send(401).send('Invalid options');
         }
       });
 
@@ -22,16 +47,6 @@ router.get('/kuveyt', async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(400).send('Invalid options');
-    log(config, null);
-  }
-});
-
-router.get('/kuveyt/:state', async (req, res) => {
-  try {
-  } catch (err) {
-    console.error(err);
-    res.status(400).send('Invalid options');
-    log(config, null);
   }
 });
 

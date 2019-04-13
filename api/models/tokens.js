@@ -18,9 +18,9 @@ const TokenSchema = new Schema({
         type: String,
         required: true
     },
-    expires_in: {
+    expires_at: {
         type: Date,
-        default: Date.now,
+        default: Date.now + 3600,
         required: true
     }
 });
