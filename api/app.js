@@ -27,7 +27,7 @@ if (cluster.isMaster && process.env.NODE_ENV!='test') { // cluster to handle a l
     .on('error', console.error)
     .on('disconnected', db.connect)
     .once('open', () => {
-      app.listen(process.env.PORT || 5000, '0.0.0.0');
+      app.listen(process.env.PORT || 80, '0.0.0.0');
       console.log(`Listening on port: ${process.env.PORT}`);
     });
 
