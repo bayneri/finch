@@ -2,6 +2,20 @@ const vision = require('@google-cloud/vision');
 const client = new vision.ImageAnnotatorClient();
 const request = require('request')
 
+const titleCase = str => {
+
+    str = str.toLowerCase().split(' ');
+
+    let final = [];
+
+    for (let word of str) {
+        final.push(word.charAt(0).toUpperCase() + word.slice(1));
+    }
+
+    return final.join(' ')
+
+}
+
 const getCategories = q => {
     return new Promise((resolve, reject) => {
         const options = {
@@ -257,7 +271,7 @@ const ocrService = (fileName, totalPrice) => {
             let arr = JSON.parse(JSON.parse(JSON.stringify(response)).body)
             x = res.map((el, i) => {
                 return {
-                    'name': el.name,
+                    'name': titleCase(el.name),
                     'category': arr[i],
                     'totalAmount': el.price
                 }

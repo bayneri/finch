@@ -45,8 +45,9 @@ router.post('/', async (req, res) => {
                             return el
                         }
                     });
-                    Transaction.findOneAndUpdate({ _id: body.transactionId }, { receiptUrl, items }).then(transaction => {
-                        res.status(200).send(transaction);
+
+                    Transaction.findOneAndUpdate({ _id: body.transactionId }, { receiptUrl, items }).then(trans => {
+                        res.status(200).send(trans);
                     }).catch(err => {
                         res.status(500).send('An error occured');
                     });
