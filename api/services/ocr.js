@@ -20,7 +20,7 @@ const getCategories = q => {
     return new Promise((resolve, reject) => {
         const options = {
             method: 'GET',
-            url: `http://c1ab9a64.eu.ngrok.io/${encodeURI(q)}`,
+            url: `http://6b3a7b37.eu.ngrok.io/${encodeURI(q)}`,
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
