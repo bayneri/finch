@@ -40,3 +40,12 @@ extension UIViewController {
   }
 
 }
+
+extension UIView {
+  func roundCorners(radius:Float, corners:CACornerMask) {
+    
+    self.clipsToBounds = true
+    self.layer.cornerRadius = CGFloat(radius)
+    self.layer.maskedCorners = corners
+  }
+}
