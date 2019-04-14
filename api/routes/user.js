@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/users');
+const Transaction = require('../models/transactions');
+const Stats = require('../models/stats');
 
 // Create User
 router.post('/', async (req, res) => {
@@ -59,8 +61,37 @@ router.get('/', async (req, res) => {
     try {
         const email = Buffer.from(req.headers.token, 'base64').toString('ascii').split(':')[0];
         console.log(email);
-        User.findOne({ email }).then(userResult => {
-            res.status(200).send(userResult);
+        Promise.all([
+            User.findOne({ email }),
+            Transaction.Transactions.aggregate(
+                [{
+                        $match: {
+                            user: email
+                        }
+                    },
+                    {
+                        $group: {
+                            _id: {
+                                $dateToString: {
+                                    format: "%Y-%m-%d",
+                                    date: "$createdAt"
+                                }
+                            },
+                            count: {
+                                $sum: 1
+                            }
+                        }
+                    }
+                ]
+            ),
+            Stats.findOne({ user: email })
+        ]).then(([userResult, transactions, stats]) => {
+            for(let transaction of transactions) {
+                transaction.user = userResult;
+            }
+
+            delete stats._id;
+            res.status(200).send(stats);
         });
     } catch (err) {
         console.error(err);
