@@ -29,17 +29,11 @@ router.post('/', async (req, res) => {
             } else {
 
                 Transaction.findOne({ _id: body.transactionId }).then(async transaction => {
-<<<<<<< HEAD
                     transaction.receiptUrl = `${process.env.S3_BASE_URL}/${encodeURI(body.transactionId)}`;
 
                     const result = await ocrService(transaction.receiptUrl, 29.04);
                     console.log(result)
                     transaction.items = result.map((el) => {
-=======
-                    const result = await ocrService(receiptUrl, transaction.totalAmount);
-                    console.log(result);
-                    let items = result.map((el) => {
->>>>>>> d365e7a96301c88cfedc4089f641f439cdef0775
                         if (el.category == 'None') {
                             return {
                                 name: el.name,
