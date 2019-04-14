@@ -102,7 +102,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// Get Transactions
+// Create Transactions
 router.post('/', async (req, res) => {
     const email = Buffer.from(req.headers.token, 'base64').toString('ascii').split(':')[0];
     const body = {
