@@ -33,7 +33,8 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupTableView()
-    setupStatusView()
+    self.statusHeightConstraint.constant = 0
+    self.loadViewIfNeeded()
     if let user = UserDataManager.currentUser, !user.kt {
       walkthroughPresented = false
     }
@@ -98,6 +99,10 @@ class HomeViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
 
+    if !self.transactions.isEmpty {
+      self.setupStatusView()
+    }
+    
     let selectedRow: IndexPath? = tableView.indexPathForSelectedRow
     if let selectedRowNotNill = selectedRow {
       tableView.deselectRow(at: selectedRowNotNill, animated: true)
@@ -113,12 +118,6 @@ class HomeViewController: UIViewController {
       self.refreshControl.endRefreshing()
       self.hideHUD()
       self.transactions = transactions
-//      self.notCompletedTransactions = notCompleted
-//      self.notCompletedTransactions = [
-//        Transaction(id: "11", name: "Denem", category: "market", date: Date(), amount: 231.4),
-//        Transaction(id: "11", name: "Denem", category: "market", date: Date(), amount: 231.4)
-//      ]
-
       self.setupStatusView()
       self.tableView.reloadData()
     }, failure: { error in
@@ -132,7 +131,7 @@ class HomeViewController: UIViewController {
   func getNotCompletedTransactions() -> [Transaction] {
     var nTransactions: [Transaction] = []
     for transactionsByDate in transactions {
-      nTransactions += transactionsByDate.data.filter { $0.transactions.isEmpty }
+      nTransactions += transactionsByDate.data.filter { $0.transactions.isEmpty && $0.billUrl == nil }
     }
     return nTransactions
   }
