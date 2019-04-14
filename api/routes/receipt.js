@@ -30,11 +30,26 @@ router.post('/', async (req, res) => {
                 const receiptUrl = `${process.env.S3_BASE_URL}/${encodeURI(body.transactionId)}`;
                 console.log(receiptUrl);
 
-                Transaction.findOneAndUpdate({ _id: body.transactionId }, { receiptUrl }).then(transaction => {
-                    ocrService(receiptUrl).then(result => {
-                        console.log(result);
-                        res.send({ receiptUrl });
-                    })
+                Transaction.findOne({ _id: body.transactionId }).then(async transaction => {
+                    const result = await ocrService(receiptUrl, 29.04);
+                    console.log(result);
+                    let items = result.map((el) => {
+                        if (el.category == 'None') {
+                            return {
+                                name: el.name,
+                                category: transaction.category,
+                                totalAmount: el.totalAmount
+                            }
+                        }
+                        else {
+                            return el
+                        }
+                    });
+                    Transaction.findOneAndUpdate({ _id: body.transactionId }, { receiptUrl, items }).then(transaction => {
+                        res.status(200).send(transaction);
+                    }).catch(err => {
+                        res.status(500).send('An error occured');
+                    });
                 })
 
             }

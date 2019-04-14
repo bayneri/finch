@@ -1,5 +1,28 @@
 const vision = require('@google-cloud/vision');
 const client = new vision.ImageAnnotatorClient();
+const request = require('request')
+
+const getCategories = q => {
+    return new Promise((resolve, reject) => {
+        const options = {
+            method: 'GET',
+            url: `http://2cfc66cb.eu.ngrok.io/${encodeURI(q)}`,
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+
+        };
+
+        request.get(options, (err, res) => {
+            if (!err) {
+                resolve(res);
+            } else {
+                reject();
+            }
+        });
+    });
+}
 
 // Performs text detection on the local file
 const getCenter = function (points) {
@@ -38,7 +61,7 @@ const getPrice = function (str) {
 
 const ocrService = (fileName, totalPrice) => {
     return client.textDetection(fileName)
-        .then(res => {
+        .then(async res => {
             // console.log(res)
             let products = []
             let tokens = res[0].textAnnotations.slice(1)
@@ -71,7 +94,7 @@ const ocrService = (fileName, totalPrice) => {
                     // }
                     // // console.log(slope, ss)
 
-                    let slopeDiff = slope - getSlope(points[1], nextElement.boundingPoly.vertices[0])
+                    let slopeDiff = slope - getSlope(center, nextCenter)
 
                     if (nextElement !== element) {
                         // console.log('-------------------------------------------------------------')
@@ -178,7 +201,6 @@ const ocrService = (fileName, totalPrice) => {
                         name = name.slice(0, -2)
 
                     name = name.trim()
-                    // console.log(name)
                     let numCnt = 0
                     let numLet = 0
                     for (i in name) {
@@ -190,9 +212,14 @@ const ocrService = (fileName, totalPrice) => {
                             numLet++;
                         }
                     }
+
                     if (!name.includes('TOPLAM') && !name.includes('TOP') && !name.includes('KDV') &&
                         !name.includes('NAKIT') && !name.includes('ARA TOP') && !name.includes('NAKİT')) {
+                        // console.log('-------------------------------')
+                        // console.log(name, '++++', price, numLet, numCnt)
+
                         if (numLet > numCnt + 2)
+
                             products.push({ name: name, price: price.replace(',', '.') })
                     }
                 }
@@ -217,11 +244,26 @@ const ocrService = (fileName, totalPrice) => {
                     break
                 }
             }
-            if (res && res.length > 1)
-                return res
-            else
-                return products
+            if (!res || res.length <= 1) {
+                res = products
+            }
+
+
+            const q = res.map((el) => el.name).join(' $$$ ')
+            console.log(q);
+
+
+            const response = await getCategories(q);
+            let arr = JSON.parse(JSON.parse(JSON.stringify(response)).body)
+            x = res.map((el, i) => {
+                return {
+                    'name': el.name,
+                    'category': arr[i],
+                    'totalAmount': el.price
+                }
+            })
+            return x
+
         })
 }
-
 module.exports = ocrService
