@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class UserAPI {
   
@@ -66,12 +67,11 @@ class UserAPI {
     })
   }
   
-  class func getMyProfile(_ success: @escaping (_ user: User) -> Void, failure: @escaping (_ error: Error) -> Void) {
-    let url = currentUserUrl + "profile"
-    APIClient.request(.get, url: url, success: { response, _ in
+  class func getProfile(_ success: @escaping (_ monthlyData:JSON, _ weeklyData:JSON, _ categoryData:JSON) -> Void, failure: @escaping (_ error: Error) -> Void) {
+    let url = currentUserUrl
+    APIClient.requestJson(.get, url: url, success: { response in
       do {
-        let user = try JSONDecoder().decode(User.self, from: response["user"] as? [String: Any] ?? [:])
-        success(user)
+        success(response["monthly"], response["weekly"], response["categories"])
       } catch {
         failure(App.error(domain: .parsing, localizedDescription: "Could not parse a valid user".localized))
       }
