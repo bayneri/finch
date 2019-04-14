@@ -29,14 +29,14 @@ class TransactionAPI {
   }
   
   //Example method that uploads base64 encoded image.
-  class func sendBill(transaction: Transaction, bill: UIImage, success: @escaping (_ response: [String: Any]) -> Void, failure: @escaping (_ error: Error) -> Void) {
+  class func sendBill(transaction: Transaction, bill: UIImage, success: @escaping (_ response: JSON) -> Void, failure: @escaping (_ error: Error) -> Void) {
     let picData = resizeImage(image: bill, height: 1080).jpegData(compressionQuality: 0.75)
     let parameters = [
       "transactionId": transaction.id,
       "image": picData!.asBase64Param()
     ]
     
-    APIClient.request(.post, url: "/receipt", params: parameters, success: { response, headers in
+    APIClient.requestJson(.post, url: "/receipt", params: parameters, success: { response in
       print(response)
       success(response)
     }, failure: { error in

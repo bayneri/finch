@@ -45,20 +45,37 @@ class Transaction {
   }
   
   var amountLabel: String {
-    return "₺ \(amount)"
+    return "₺\(String(format: "%.2f", amount))"
   }
   
   var categoryImage: UIImage {
-    switch self.category {
-    case "restoran":
-      return UIImage(named: "dress")!
-    case "market":
-      return UIImage(named: "food")!
-    case "Akaryakıt":
-      return UIImage(named: "gas")!
-    default:
-      return UIImage(named: "dress")!
+    let categories = [
+      "baby": ["Bebek, Oyuncak", "Anne Ürünleri", "Bebek Ürünleri", "Oyuncaklar", "Oyuncak", "Bebek Bezi"],
+      "clean": ["Deterjan, Temizlik", "Çamaşır Gereçleri", "Ev Temizlik Gereçleri", "Banyo Gereçleri", "Bulaşık Yıkama", "Ev Temizlik Ürünleri", "Çamaşır Yıkama"],
+      "meat": ["Et, Balık, Kümes", "Kırmızı Et", "Kümes Hayvanları", "Balık, Deniz Ürünleri"],
+      "pet": ["Ev, Pet", "Pet Ürünleri"],
+      "home": ["Kişisel İlgi, Eğlence", "Bahçe, Çiçek, Kamp, Piknik", "Kitap, Dergi, Kırtasiye", "Elektrik, Elektronik", "Ev, Ofis, Bahçe Dekorasyon", "Tekstil, Giyim, Aksesuar", "Mutfak Eşya, Gereçleri"],
+      "food": [ "Gıda, Şekerleme", "Yemek", "Şekersiz Tatlandırıcılı Ürünler", "Sıvı Yağlar", "Çikolata, Gofret", "Şeker", "Bisküvi, Çerez", "Hazır Yemek, Konserve, Salça", "Meze", "Çorba Ve Bulyonlar", "Tuz, Baharat, Harç", "Sağlıklı Yaşam Ürünleri", "Unlu Mamül, Tatlı", "Sakız, Şekerleme", "Dondurulmuş Gıda", "Bakliyat, Makarna" ],
+      "cosmetics":  ["Kağıt, Kozmetik", "Hijyenik Pedler", "Makyaj Ve Süs Ürünleri", "Ağdalar, Tüy Dökücüler", "Tıraş Malzemeleri", "Sağlık Ürünleri", "Vücut, Cilt Bakım", "Ağız Bakım Ürünleri", "Kağıt Ürünleri", "Parfüm, Deodorant", "Duş, Banyo, Sabun", "Saç Bakım"],
+      "fruit": ["Meyve, Sebze", "Meyve", "Sebze"],
+      "breakfast": ["Süt, Kahvaltılık", "Yoğurt", "Süt", "Yumurta", "Dondurma", "Peynir", "Sütlü Tatlı, Krema", "Tereyağ, Margarin", "Kahvaltılıklar"],
+      "drinks": ["Çay & Kahve", "Cafe & Restoran", "İçecek", "Gazlı İçecekler", "Çay, Kahve", "Günlük İçecek", "Sular", "Maden Suları", "Gazsız İçecekler" ],
+      "fuel": ["Benzin", "Akaryakıt"],
+      "smoke": ["Sigara"],
+      "alcohol": ["Alkol"],
+      "restaurant": ["Restoran"],
+      "electronic": ["Bilgisayar", "Telefon", "Elektronik"],
+      "market": ["market", "Market"]
+
+    ]
+  
+    for (name, subs) in categories {
+      if subs.contains(self.category) {
+        return UIImage(named: name)!
+      }
     }
+    
+    return UIImage(named: "default")!
   }
   
   // MARK: Constructor
