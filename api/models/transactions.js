@@ -37,6 +37,6 @@ module.exports = {
     create: transaction => Transactions.create(transaction),
     findOne: transaction => Transactions.findOne(transaction),
     find: (query, select, options) => Transactions.find(query, select, options),
-    findOneAndUpdate: (query, params) => Transactions.findOneAndUpdate(query, params),
+    findOneAndUpdate: (query, params) => Transactions.findOneAndUpdate(query, params, { upsert: true }),
     Transactions,
 };
