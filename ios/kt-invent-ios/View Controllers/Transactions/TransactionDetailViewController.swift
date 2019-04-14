@@ -53,7 +53,7 @@ extension TransactionDetailViewController: UINavigationControllerDelegate, UIIma
       imagePicker =  UIImagePickerController()
       imagePicker.delegate = self
       imagePicker.sourceType = .savedPhotosAlbum
-      
+
       present(imagePicker, animated: true, completion: nil)
     }
   }
@@ -64,8 +64,11 @@ extension TransactionDetailViewController: UINavigationControllerDelegate, UIIma
       self.showHUD("Fiş Yükleniyor")
       TransactionAPI.sendBill(transaction: transaction!, bill: image, success: { response in
         print(response)
-        self.transaction?.billUrl = response["receiptUrl"] as? String
+        self.transaction?.transactions = []
+        self.transaction?.billUrl = response["receiptUrl"].string
+        self.transaction?.appendTransactions(fromJSON: response["items"])
         self.setupButton()
+        self.tableView.reloadData()
         self.hideHUD()
       }, failure: { error in
         self.hideHUD()

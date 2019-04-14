@@ -45,6 +45,9 @@
 		4F2B6ED522628462001A3FC7 /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B6ED422628462001A3FC7 /* BillViewController.swift */; };
 		4F2B6ED72262955C001A3FC7 /* NotCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B6ED62262955C001A3FC7 /* NotCompletedViewController.swift */; };
 		4F379D9E22625C1E006F2B70 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F379D9D22625C1E006F2B70 /* ProfileViewController.swift */; };
+		4F90671922631CD1006B7342 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90671822631CD1006B7342 /* CardView.swift */; };
+		4F90671B22631FBB006B7342 /* AssistantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90671A22631FBB006B7342 /* AssistantViewController.swift */; };
+		4F90671D226328E6006B7342 /* TipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90671C226328E5006B7342 /* TipTableViewCell.swift */; };
 		5FC61139A8EAEBE12D794BF9 /* Pods_kt_invent_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A717DB1FD467397A2AB372 /* Pods_kt_invent_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +93,9 @@
 		4F2B6ED422628462001A3FC7 /* BillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
 		4F2B6ED62262955C001A3FC7 /* NotCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotCompletedViewController.swift; sourceTree = "<group>"; };
 		4F379D9D22625C1E006F2B70 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4F90671822631CD1006B7342 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		4F90671A22631FBB006B7342 /* AssistantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantViewController.swift; sourceTree = "<group>"; };
+		4F90671C226328E5006B7342 /* TipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTableViewCell.swift; sourceTree = "<group>"; };
 		50A717DB1FD467397A2AB372 /* Pods_kt_invent_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kt_invent_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9193E04C0DDFB395F3623C2 /* Pods-kt-invent-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kt-invent-ios.release.xcconfig"; path = "Target Support Files/Pods-kt-invent-ios/Pods-kt-invent-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				4F24355F2261E2EA00B532F7 /* KTTextField.swift */,
+				4F90671822631CD1006B7342 /* CardView.swift */,
 				4F2435632261E51600B532F7 /* KTButton.swift */,
 			);
 			path = Subclasses;
@@ -208,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				4F379D9D22625C1E006F2B70 /* ProfileViewController.swift */,
+				4F90671A22631FBB006B7342 /* AssistantViewController.swift */,
 				4F24357322624A0B00B532F7 /* Transactions */,
 				4F2435522261DA1300B532F7 /* Auth */,
 			);
@@ -274,6 +282,7 @@
 		4F24356E2262393800B532F7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4F90671C226328E5006B7342 /* TipTableViewCell.swift */,
 				4F24356F2262395000B532F7 /* TransactionTableViewCell.swift */,
 			);
 			path = Cells;
@@ -438,6 +447,7 @@
 				4F2435382261D3A800B532F7 /* Base64Media.swift in Sources */,
 				4F2435412261D5D900B532F7 /* UserDataManager.swift in Sources */,
 				4F2435512261D8D100B532F7 /* StoryboardExtension.swift in Sources */,
+				4F90671B22631FBB006B7342 /* AssistantViewController.swift in Sources */,
 				4F24353F2261D55800B532F7 /* SessionManager.swift in Sources */,
 				4F2435152261CFC000B532F7 /* AppDelegate.swift in Sources */,
 				4F2B6ED522628462001A3FC7 /* BillViewController.swift in Sources */,
@@ -449,6 +459,7 @@
 				4F2435352261D37800B532F7 /* UserAPI.swift in Sources */,
 				4F2435622261E3A100B532F7 /* UIColorExtension.swift in Sources */,
 				4F379D9E22625C1E006F2B70 /* ProfileViewController.swift in Sources */,
+				4F90671D226328E6006B7342 /* TipTableViewCell.swift in Sources */,
 				4F2B6ED322628168001A3FC7 /* UIImageViewExtension.swift in Sources */,
 				4F2435472261D7DA00B532F7 /* Contants.swift in Sources */,
 				4F2435542261DA1F00B532F7 /* SignInViewController.swift in Sources */,
@@ -467,6 +478,7 @@
 				4F24356922621D2C00B532F7 /* AccountViewController.swift in Sources */,
 				4F24353C2261D3D900B532F7 /* Media.swift in Sources */,
 				4F24355E2261DC6200B532F7 /* UIViewControllerExtension.swift in Sources */,
+				4F90671922631CD1006B7342 /* CardView.swift in Sources */,
 				4F24353A2261D3C000B532F7 /* MultipartMedia.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
