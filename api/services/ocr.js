@@ -13,6 +13,7 @@ const getSlope = function (p1, p2) {
 
 const getPrice = function (str) {
     let t = ""
+    let z = 0
     str = str.trim()
     for (let i = str.length - 1; i >= 0; i--) {
         if ('0123456789'.includes(str[i]) || str[i] == ',') {
@@ -20,10 +21,13 @@ const getPrice = function (str) {
         }
         else if (str[i] == ' ') {
             if (str[i - 1] == ',' || str[i + 1] == ',') continue
-            else break
+            else {
+                break
+            }
         }
-        else break
-
+        else {
+            break
+        }
     }
     let ret = ""
     for (let i = t.length - 1; i >= 0; i--) {
@@ -49,15 +53,25 @@ const ocrService = (fileName, totalPrice) => {
                 let p1 = { x: (points[0].x + points[3].x) / 2, y: (points[0].y + points[3].y) / 2 }
                 let p2 = { x: (points[1].x + points[2].x) / 2, y: (points[1].y + points[2].y) / 2 }
                 let slope = getSlope(p1, p2)
-                const threshold = 0.082
+                const threshold = 0.077
 
                 let closestElement = {}
 
                 let f = 0
+
+                // console.log(element.description)
+                // console.log('-------------------------------------------------------------')
+
                 tokens.forEach((nextElement, j) => {
 
                     let nextCenter = getCenter(nextElement.boundingPoly.vertices)
-                    let slopeDiff = slope - getSlope(center, nextCenter)
+                    // let slopeDiff = 0;
+                    // for (let tt = 0; tt < 4; tt++) {
+                    //     slopeDiff += Math.abs(slope - getSlope(points[tt], nextElement.boundingPoly.vertices[tt])) / 4
+                    // }
+                    // // console.log(slope, ss)
+
+                    let slopeDiff = slope - getSlope(points[1], nextElement.boundingPoly.vertices[0])
 
                     if (nextElement !== element) {
                         // console.log('-------------------------------------------------------------')
@@ -105,7 +119,6 @@ const ocrService = (fileName, totalPrice) => {
             chains.sort(function (c1, c2) {
                 return getCenter(c1[0].boundingPoly.vertices).y - getCenter(c2[0].boundingPoly.vertices).y
             })
-
             chains.forEach(chain => {
                 let numCnt = 0
                 let numLet = 0
@@ -128,15 +141,44 @@ const ocrService = (fileName, totalPrice) => {
                     line = line.trim()
                     // console.log(line)
 
-                    for (i in line) {
+                    for (let i = 0; i < line.length; i++) {
                         c = line[i]
-                        if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z') || c == 'İ' || c == 'İ' || c == 'ı' || c == 'Ö' || c == 'ö' || c == 'Ç' || c == 'ç' || c == 'Ş' || c == 'ş' || c == 'Ü' || c == 'ü' || c == 'ğ' || c == 'Ğ'
+                        if (c == '%') {
+                            break
+                        }
+                        if (('a' <= line[i + 1] && line[i + 1] <= 'z')) {
+                            name += c
+                        }
+                        else if (('A' <= line[i + 1] && line[i + 1] <= 'Z')) {
+                            name += c
+                        }
+                        else if (('a' <= line[i + 2] && line[i + 2] <= 'z')) {
+                            name += c
+                        }
+                        else if (('A' <= line[i + 2] && line[i + 2] <= 'Z')) {
+                            name += c
+                        }
+                        else if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z') || c == 'İ' || c == 'İ' || c == 'ı' || c == 'Ö' || c == 'ö' || c == 'Ç' || c == 'ç' || c == 'Ş' || c == 'ş' || c == 'Ü' || c == 'ü' || c == 'ğ' || c == 'Ğ'
                             || ('0123456789'.includes(c)) || c == '-' || c == ' ') {
                             name += c
                         }
                         else break
 
                     }
+                    name = name.trim()
+                    if (name[name.length - 2] == "x")
+                        name = name.slice(0, -2)
+
+                    name = name.trim()
+                    if (name.slice(-2) == "08")
+                        name = name.slice(0, -2)
+
+                    name = name.trim()
+                    if (name.slice(-2) == "18")
+                        name = name.slice(0, -2)
+
+                    name = name.trim()
+                    // console.log(name)
                     let numCnt = 0
                     let numLet = 0
                     for (i in name) {
@@ -148,19 +190,16 @@ const ocrService = (fileName, totalPrice) => {
                             numLet++;
                         }
                     }
-
-                    if (numLet > numCnt + 2)
-                        products.push({ name: name, price: price.replace(',', '.') })
+                    if (!name.includes('TOPLAM') && !name.includes('TOP') && !name.includes('KDV') &&
+                        !name.includes('NAKIT') && !name.includes('ARA TOP') && !name.includes('NAKİT')) {
+                        if (numLet > numCnt + 2)
+                            products.push({ name: name, price: price.replace(',', '.') })
+                    }
                 }
             });
 
+            // console.log(products)
             res = []
-            if (!totalPrice) {
-                totalPrice = 0;
-                for (let k = 0; k < products.length; k++) {
-                    totalPrice = totalPrice >= parseFloat(products[k].price) ? totalPrice : parseFloat(products[k].price);
-                }
-            }
 
             for (let i = 0; i < (1 << products.length); i++) {
                 let sum = 0.0
@@ -178,7 +217,10 @@ const ocrService = (fileName, totalPrice) => {
                     break
                 }
             }
-            return res
+            if (res && res.length > 1)
+                return res
+            else
+                return products
         })
 }
 
