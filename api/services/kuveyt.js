@@ -6,19 +6,19 @@ const getTransactions = (user, token) =>  {
         totalAmount: 29.04,
         category: 'Market',
         user: user,
-        createdAt: new Date((1555215552))
+        createdAt: new Date((1555237263) * 1000)
     },{
         name: 'Shell',
         totalAmount: 150,
         category: 'Benzin',
         user: user,
-        createdAt: new Date((1400014000))
+        createdAt: new Date((1555214000) * 1000)
     },{
         name: 'Starbucks',
         totalAmount: 18.5,
         category: 'Cafe & Restoran',
         user: user,
-        createdAt: new Date((1414141414))
+        createdAt: new Date((1555241414) * 1000)
     }];
 
     console.log(transactions);

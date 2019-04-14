@@ -59,17 +59,8 @@ router.get('/', async (req, res) => {
                 ind += groups[i].count;
             }
 
-            const notCompletedTransactions = [];
-            for (let i in transactions) {
-                if (!transactions[i].items || transactions[i].items.length == 0) {
-                    notCompletedTransactions.unshift(transactions[i]);
-                } else {
-                    break;
-                }
-            }
             res.status(200).send({
-                transactions: groups,
-                notCompletedTransactions
+                transactions: groups
             });
         }).catch(err => {
             console.error(err);
