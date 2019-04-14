@@ -27,7 +27,7 @@ if (cluster.isMaster && process.env.NODE_ENV!='test') { // cluster to handle a l
     .on('error', console.error)
     .on('disconnected', db.connect)
     .once('open', () => {
-      app.listen(process.env.PORT || 5000, '0.0.0.0');
+      app.listen(process.env.PORT || 8080, '0.0.0.0');
       console.log(`Listening on port: ${process.env.PORT}`);
     });
 
@@ -47,6 +47,7 @@ if (cluster.isMaster && process.env.NODE_ENV!='test') { // cluster to handle a l
   app.use('/user', require('./routes/user'));
   app.use('/transaction', require('./routes/transaction'));
   app.use('/receipt', require('./routes/receipt'));
+  app.use('/dummy', require('./routes/dummy'));
 }
 
 module.exports = app; //for testing

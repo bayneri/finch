@@ -4,6 +4,7 @@ const request = require('request');
 const Token = require("../models/tokens");
 const User = require('../models/users');
 const kuveytConfig = require('../config/kuveyt');
+const kuveytService = require('../services/kuveyt');
 
 // Auth Kuveyt
 router.get('/kuveyt', async (req, res) => {
@@ -41,6 +42,7 @@ router.get('/kuveyt', async (req, res) => {
             const email = Buffer.from(token.state, 'base64').toString('ascii').split(':')[0];
             console.log(email);
             User.findOneAndUpdate({ email }, {kToken: token._id}).then(() => {
+              kuveytService.getTransactions(email, token.state); //Kuveyt full transactions api simulator
               return res.redirect(`KTInventOAuth://?token=${tokenObject.access_token}`)
             })
           });
