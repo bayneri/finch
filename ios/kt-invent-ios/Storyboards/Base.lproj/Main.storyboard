@@ -416,7 +416,7 @@ Finch.</string>
                     </tabBar>
                     <connections>
                         <segue destination="qWh-8I-OSg" kind="relationship" relationship="viewControllers" id="o8W-HC-CEM"/>
-                        <segue destination="s3j-w7-xVm" kind="relationship" relationship="viewControllers" id="tlv-M3-JHO"/>
+                        <segue destination="pk1-Ic-XC5" kind="relationship" relationship="viewControllers" id="tlv-M3-JHO"/>
                         <segue destination="t3v-tb-ow7" kind="relationship" relationship="viewControllers" id="Zz6-Dz-dU9"/>
                     </connections>
                 </tabBarController>
@@ -448,42 +448,116 @@ Finch.</string>
             <objects>
                 <viewController id="s3j-w7-xVm" customClass="ProfileViewController" customModule="kt_invent_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qTe-O5-h9s">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5n-Ob-0U4" customClass="KTButton" customModule="kt_invent_ios" customModuleProvider="target">
-                                <rect key="frame" x="41.5" y="401" width="331" height="55"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="47r-4d-SQ4">
+                                <rect key="frame" x="0.0" y="88" width="414" height="1029"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aylık Harcamalar" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOq-8c-Nav">
+                                        <rect key="frame" x="109.5" y="20" width="195" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <color key="textColor" red="0.4549019608" green="0.41960784309999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9o-dk-750" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="20.5" y="57.5" width="373" height="180"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="QbM-QO-Mqd"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haftalık Harcamalar" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFu-GV-YK2">
+                                        <rect key="frame" x="109.5" y="267.5" width="195" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <color key="textColor" red="0.4549019608" green="0.41960784309999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kategorilere Göre Harcamalar" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJ1-s1-emZ">
+                                        <rect key="frame" x="61.5" y="515" width="291.5" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <color key="textColor" red="0.4549019608" green="0.41960784309999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIU-Xf-adM" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="20.5" y="305" width="373" height="180"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="EtC-VC-mhX"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5n-Ob-0U4" customClass="KTButton" customModule="kt_invent_ios" customModuleProvider="target">
+                                        <rect key="frame" x="41.5" y="772.5" width="331" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="zht-53-Os0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <state key="normal" title="ÇIKIŞ YAP">
+                                            <color key="titleColor" red="1" green="1" blue="0.36113102064220182" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="logout:" destination="s3j-w7-xVm" eventType="touchUpInside" id="TLV-e1-Ee8"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F6M-r7-uAK" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="20.5" y="552.5" width="373" height="180"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="6ZU-Fx-PCV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="zht-53-Os0"/>
+                                    <constraint firstItem="CJ1-s1-emZ" firstAttribute="centerX" secondItem="pFu-GV-YK2" secondAttribute="centerX" id="0ts-K9-YCg"/>
+                                    <constraint firstItem="fOq-8c-Nav" firstAttribute="top" secondItem="47r-4d-SQ4" secondAttribute="top" constant="20" id="5pd-6S-dXq"/>
+                                    <constraint firstItem="M5n-Ob-0U4" firstAttribute="width" secondItem="47r-4d-SQ4" secondAttribute="width" multiplier="0.8" id="7ez-t9-ATu"/>
+                                    <constraint firstItem="pFu-GV-YK2" firstAttribute="top" secondItem="h9o-dk-750" secondAttribute="bottom" constant="30" id="83n-gb-h0T"/>
+                                    <constraint firstItem="pIU-Xf-adM" firstAttribute="width" secondItem="h9o-dk-750" secondAttribute="width" id="92g-bW-jwW"/>
+                                    <constraint firstItem="F6M-r7-uAK" firstAttribute="centerX" secondItem="pIU-Xf-adM" secondAttribute="centerX" id="9Xu-GC-lzv"/>
+                                    <constraint firstItem="F6M-r7-uAK" firstAttribute="top" secondItem="CJ1-s1-emZ" secondAttribute="bottom" constant="10" id="DDl-am-eN5"/>
+                                    <constraint firstItem="h9o-dk-750" firstAttribute="centerX" secondItem="47r-4d-SQ4" secondAttribute="centerX" id="Dmo-FO-Naq"/>
+                                    <constraint firstItem="pFu-GV-YK2" firstAttribute="width" secondItem="fOq-8c-Nav" secondAttribute="width" id="L3i-h5-CSb"/>
+                                    <constraint firstItem="h9o-dk-750" firstAttribute="top" secondItem="fOq-8c-Nav" secondAttribute="bottom" constant="10" id="Qt2-Bm-vuh"/>
+                                    <constraint firstItem="CJ1-s1-emZ" firstAttribute="top" secondItem="pIU-Xf-adM" secondAttribute="bottom" constant="30" id="Uyv-dA-lei"/>
+                                    <constraint firstItem="pIU-Xf-adM" firstAttribute="centerX" secondItem="h9o-dk-750" secondAttribute="centerX" id="VF9-xF-1N2"/>
+                                    <constraint firstAttribute="bottom" secondItem="M5n-Ob-0U4" secondAttribute="bottom" constant="40" id="VXO-YB-Qmz"/>
+                                    <constraint firstItem="M5n-Ob-0U4" firstAttribute="centerX" secondItem="47r-4d-SQ4" secondAttribute="centerX" id="aAu-j6-ZUb"/>
+                                    <constraint firstItem="pIU-Xf-adM" firstAttribute="top" secondItem="pFu-GV-YK2" secondAttribute="bottom" constant="10" id="ejB-0g-cp0"/>
+                                    <constraint firstItem="M5n-Ob-0U4" firstAttribute="top" secondItem="F6M-r7-uAK" secondAttribute="bottom" constant="40" id="gGq-1x-Yu4"/>
+                                    <constraint firstItem="F6M-r7-uAK" firstAttribute="width" secondItem="pIU-Xf-adM" secondAttribute="width" id="nIN-rC-cPT"/>
+                                    <constraint firstItem="pFu-GV-YK2" firstAttribute="leading" secondItem="fOq-8c-Nav" secondAttribute="leading" id="rf0-UJ-Eg8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <state key="normal" title="ÇIKIŞ YAP">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="logout:" destination="s3j-w7-xVm" eventType="touchUpInside" id="TLV-e1-Ee8"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="M5n-Ob-0U4" firstAttribute="centerX" secondItem="DDp-jE-1uj" secondAttribute="centerX" id="Fic-hr-Mw0"/>
-                            <constraint firstItem="M5n-Ob-0U4" firstAttribute="width" secondItem="qTe-O5-h9s" secondAttribute="width" multiplier="0.8" id="kvK-tw-WEu"/>
-                            <constraint firstItem="M5n-Ob-0U4" firstAttribute="centerY" secondItem="DDp-jE-1uj" secondAttribute="centerY" id="nip-WN-qcw"/>
+                            <constraint firstItem="h9o-dk-750" firstAttribute="width" secondItem="qTe-O5-h9s" secondAttribute="width" multiplier="0.9" id="6IT-cm-kon"/>
+                            <constraint firstItem="fOq-8c-Nav" firstAttribute="centerX" secondItem="DDp-jE-1uj" secondAttribute="centerX" id="6zy-hL-Uwu"/>
+                            <constraint firstItem="47r-4d-SQ4" firstAttribute="leading" secondItem="DDp-jE-1uj" secondAttribute="leading" id="Y1k-pW-C60"/>
+                            <constraint firstItem="DDp-jE-1uj" firstAttribute="trailing" secondItem="47r-4d-SQ4" secondAttribute="trailing" id="mbJ-KK-F4N"/>
+                            <constraint firstItem="DDp-jE-1uj" firstAttribute="bottom" secondItem="47r-4d-SQ4" secondAttribute="bottom" id="qFO-Ng-BAn"/>
+                            <constraint firstItem="47r-4d-SQ4" firstAttribute="top" secondItem="DDp-jE-1uj" secondAttribute="top" id="zeB-Pn-hOw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DDp-jE-1uj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Hesabım" image="avatar" id="E78-Ej-VBy"/>
+                    <navigationItem key="navigationItem" title="Hesabım" id="ATc-4Q-8bU"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <size key="freeformSize" width="414" height="1200"/>
+                    <connections>
+                        <outlet property="categoryChart" destination="F6M-r7-uAK" id="Z0L-p4-1W6"/>
+                        <outlet property="monthlyChart" destination="h9o-dk-750" id="Utd-PU-v3u"/>
+                        <outlet property="weeklyChart" destination="pIU-Xf-adM" id="bBr-pY-EfY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22c-YZ-v1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3758" y="481"/>
+            <point key="canvasLocation" x="4668.115942028986" y="642.1875"/>
         </scene>
         <!--Asistan-->
         <scene sceneID="E6S-Zf-DtV">
@@ -499,7 +573,7 @@ Finch.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16C-23-J99" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3758" y="1209"/>
+            <point key="canvasLocation" x="3758" y="1482"/>
         </scene>
         <!--Transaction Detail View Controller-->
         <scene sceneID="JHs-Vk-hwc">
@@ -793,7 +867,26 @@ Finch.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcF-O5-dGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4564" y="467"/>
+            <point key="canvasLocation" x="6250.7246376811599" y="480.80357142857139"/>
+        </scene>
+        <!--Hesabım-->
+        <scene sceneID="JYm-ce-iiu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pk1-Ic-XC5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Hesabım" image="avatar" id="E78-Ej-VBy"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ary-kQ-1d1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="s3j-w7-xVm" kind="relationship" relationship="rootViewController" id="ugR-UZ-4rM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UDa-6J-aUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3757.971014492754" y="642.85714285714278"/>
         </scene>
     </scenes>
     <resources>
