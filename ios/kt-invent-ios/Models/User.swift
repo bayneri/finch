@@ -38,6 +38,10 @@ class User: Codable {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     name = try container.decode(String.self, forKey: .name)
     email = try container.decode(String.self, forKey: .email)
-    kt = try container.decode(Bool.self, forKey: .kt)
+    do {
+      kt = try container.decode(Bool.self, forKey: .kt)
+    } catch {
+      kt = false
+    }
   }
 }
