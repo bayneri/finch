@@ -14,9 +14,9 @@ const getTransactions = (user, token) =>  {
         user: user,
         createdAt: new Date((1555214000) * 1000)
     },{
-        name: 'Starbucks',
-        totalAmount: 18.5,
-        category: 'Cafe & Restoran',
+        name: 'Migros Ticaret',
+        totalAmount: 132.4,
+        category: 'Market',
         user: user,
         createdAt: new Date((1555241414) * 1000)
     }];
