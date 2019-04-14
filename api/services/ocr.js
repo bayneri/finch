@@ -228,7 +228,7 @@ const ocrService = (fileName, totalPrice) => {
                     }
 
                     if (!name.includes('TOPLAM') && !name.includes('TOP') && !name.includes('KDV') &&
-                        !name.includes('NAKIT') && !name.includes('ARA TOP') && !name.includes('NAKİT')) {
+                        !name.includes('NAKIT') && !name.includes('ARA TOP') && !name.includes('NAKİT') && !name.includes('PARA')) {
                         // console.log('-------------------------------')
                         // console.log(name, '++++', price, numLet, numCnt)
 
