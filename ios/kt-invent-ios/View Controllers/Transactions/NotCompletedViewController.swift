@@ -13,7 +13,7 @@ import SwiftDate
 
 class NotCompletedViewController: UIViewController {
   var transactions:[Transaction] = []
-
+  
   // MARK: - Outlets
   @IBOutlet weak var tableView: UITableView!
   
@@ -30,18 +30,21 @@ class NotCompletedViewController: UIViewController {
     backItem.title = "Geri"
     navigationItem.backBarButtonItem = backItem
   }
-
-
+  
+  
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
-
+    
     let selectedRow: IndexPath? = tableView.indexPathForSelectedRow
     if let selectedRowNotNill = selectedRow {
       tableView.deselectRow(at: selectedRowNotNill, animated: true)
     }
+    self.transactions = transactions.filter { $0.transactions.isEmpty && $0.billUrl == nil }
+    self.tableView.reloadData()
+    
   }
-  }
+}
 
 extension NotCompletedViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
