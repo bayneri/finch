@@ -52,7 +52,8 @@ extension TransactionDetailViewController: UINavigationControllerDelegate, UIIma
     } else {
       imagePicker =  UIImagePickerController()
       imagePicker.delegate = self
-      imagePicker.sourceType = .savedPhotosAlbum
+//      imagePicker.sourceType = .savedPhotosAlbum
+      imagePicker.sourceType = .camera
 
       present(imagePicker, animated: true, completion: nil)
     }
