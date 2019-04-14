@@ -73,8 +73,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHU-km-cRV">
-                                <rect key="frame" x="32" y="116" width="167.5" height="79"/>
-                                <string key="text">Welcome to
+                                <rect key="frame" x="32" y="116" width="173.5" height="79"/>
+                                <string key="text">Hoş geldiniz
 Finch.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <color key="textColor" red="0.45508993310000001" green="0.41961441859999998" blue="0.40671423159999998" alpha="1" colorSpace="calibratedRGB"/>
