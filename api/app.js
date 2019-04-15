@@ -47,7 +47,10 @@ if (cluster.isMaster && process.env.NODE_ENV!='test') { // cluster to handle a l
   app.use('/user', require('./routes/user'));
   app.use('/transaction', require('./routes/transaction'));
   app.use('/receipt', require('./routes/receipt'));
+<<<<<<< HEAD
   app.use('/dummy', require('./routes/dummy'));
+=======
+>>>>>>> bc37b86791441431bece4baa75086a6033bc87a5
 }
 
 module.exports = app; //for testing
