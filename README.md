@@ -37,4 +37,7 @@ Test başarı oranımız %78.
 ### [Video Demo](https://www.youtube.com/watch?v=vZneJ75OdUA&feature=youtu.be)
 
 ## Takım
+| [Enes Çakır](https://github.com/enescakir) 	| [Halil Çetiner](https://github.com/bayneri) 	| [Alperen Yakut](https://github.com/ayakut16) 	| [Abdullatif Köksal](https://github.com/akoksal) 	|
+|------	|-------	|---------	|-------	|
+
 ![Takım](https://github.com/bayneri/finch/blob/master/assets/team.jpg)
