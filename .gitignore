@@ -1,2 +1,3 @@
 api/node_modules
 ios/Pods
+api/.env

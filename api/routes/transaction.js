@@ -58,23 +58,8 @@ router.get('/', async (req, res) => {
                 delete groups[i]._id;
                 ind += groups[i].count;
             }
-
-<<<<<<< HEAD
             res.status(200).send({
                 transactions: groups
-=======
-            const notCompletedTransactions = [];
-            for (let i in transactions) {
-                if (!transactions[i].items || transactions[i].items.length == 0) {
-                    notCompletedTransactions.unshift(transactions[i]);
-                } else {
-                    break;
-                }
-            }
-            res.status(200).send({
-                transactions: groups,
-                notCompletedTransactions
->>>>>>> bc37b86791441431bece4baa75086a6033bc87a5
             });
         }).catch(err => {
             console.error(err);

@@ -74,11 +74,7 @@ const getPrice = function (str) {
 }
 
 const ocrService = (fileName, totalPrice) => {
-<<<<<<< HEAD
     return client.documentTextDetection(fileName)
-=======
-    return client.textDetection(fileName)
->>>>>>> bc37b86791441431bece4baa75086a6033bc87a5
         .then(async res => {
             // console.log(res)
             let products = []
