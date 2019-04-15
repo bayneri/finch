@@ -1,0 +1,41 @@
+{
+  "name": "finch",
+  "version": "1.0.0",
+  "description": "finch api",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "start:server": "nodemon app.js",
+    "test": "mocha --timeout 2000 --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bayneri/finch.git"
+  },
+  "author": "Halil Cetiner (@bayneri)",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/vision": "^0.25.0",
+    "aws-sdk": "^2.437.0",
+    "body-parser": "^1.18.2",
+    "cluster": "^0.7.7",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.1",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.18.4",
+    "request": "2.88.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "mocha": "^5.2.0",
+    "prettier-eslint": "^8.8.0"
+  },
+  "engines": {
+    "node": "8.9.1"
+  }
+}
