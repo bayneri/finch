@@ -1,6 +1,7 @@
 # Finch
 ![finch](https://github.com/bayneri/finch/blob/master/assets/logo_text.png)
-#### [Kuveyt Türk Hackathon](http://www.kt-invent.com.tr) 2019 - Üçüncülük
+#### [Kuveyt Türk Hackathon](http://www.kt-invent.com.tr) 2019 - Üçüncülük (_*Yaklaşık 24 saatte geliştirilmiştir.*_)
+
 Kullanıcıların harcamalarını takip edebileceği, kredi kartlarıyla entegre çalışacak, fiş tarama özelliğiyle harcamalarının alt kırılımlarını da anlayabilen ve kullanıcıya birikim hedefleri sunacak akıllı bir asistana sahip Mobil Uygulama.
 
 Bunun yanı sıra fiş tarama özelliği ve geliştirdiğimiz algoritmalar sayesinde bireysel harcamalara dair bankaların ve kullanıcaların sahip olduğundan çok daha fazla bilgiyi işleyip, kullanıcıların hem uygulamamızla hem de bankasıyla arasındaki deneyimi iyileştirmeyi hedefliyoruz.
@@ -34,7 +35,7 @@ Test başarı oranımız %78.
 
 
 ### [Final Sunumu](https://github.com/bayneri/finch/blob/master/assets/presentation.pdf)
-### [Video Demo](https://www.youtube.com/watch?v=vZneJ75OdUA&feature=youtu.be)
+### [Video Demo](https://www.youtube.com/watch?v=vZneJ75OdUA&feature=youtu.be)>>
 
 ## Takım
 | [Enes Çakır](https://github.com/enescakir) 	| [Halil Çetiner](https://github.com/bayneri) 	| [Alperen Yakut](https://github.com/ayakut16) 	| [Abdullatif Köksal](https://github.com/akoksal) 	|
